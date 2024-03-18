@@ -1,9 +1,12 @@
-enum Input {
-  Up = 1,
-  Down,
-  Left,
-  Right
-}
+type GameState = 'menu' | 'playing' | 'gameOver';
+
+type Game = {
+  gameState: GameState;
+  round: number;
+  score: number;
+  strategems: Strategem[]; // all strategems for the game
+  activeStrategems: Strategem[]; // current round's strategems
+};
 
 type StrategemCategory =
   | 'Patriotic Administration Center'
@@ -18,7 +21,4 @@ type Strategem = {
   imgPath: string;
   category: StrategemCategory;
   sequence: Input[];
-  callIntime: number; // in seconds
-  uses: number; // 0 for infinite
-  cooldown: number; // in seconds
 };

@@ -23,6 +23,12 @@
     /* paths */
     "baseUrl": ".",
     "paths": {
+      "scenes/*": ["src/scenes/*"],
+      "components/*": ["src/components/*"],
+      "types/*": ["src/types/*"],
+      "services/*": ["src/services/*"],
+      "data/*": ["src/data/*"],
+      "assets/*": ["src/assets/*"],
     }
   },
   "include": ["src"],
