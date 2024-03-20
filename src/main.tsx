@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { ChakraProvider } from '@chakra-ui/react';
 import '@fontsource/roboto';
+import '@fontsource/kode-mono';
+import '@fontsource/kode-mono/500.css';
 
 import store from './store';
 import theme from './theme';

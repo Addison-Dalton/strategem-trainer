@@ -41,7 +41,7 @@ const StrategemInput = ({
           mx={1}
           color={correctInputCount > index ? 'hdYellow.500' : 'white'}
         >
-          <Icon boxSize="80px" as={inputIcons[input]} />
+          <Icon boxSize="60px" as={inputIcons[input]} />
         </Box>
       ))}
     </Box>

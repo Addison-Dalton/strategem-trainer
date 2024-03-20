@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
-import { Box, Text } from '@chakra-ui/react';
-import StrategemInput from 'scenes/strategem/input';
+import { Box, Text, Heading } from '@chakra-ui/react';
+import { StrategemInput, StrategemList } from 'scenes/strategem';
+import StrategemImage from 'components/strategem-img';
+import InfoLabel from 'components/info-label';
 
 import { useGame } from './hooks';
 
@@ -14,17 +16,45 @@ const Game = () => {
     resetGame();
   }, []);
 
+  const currentStrategem = activeStrategems[0];
+
   return (
-    // Eventually probably another Box here to encapsulate the game itself and the round / score on the sides
-    <Box display="flex">
-      <Text>Round: {round}</Text>
-      <Box>
-        <StrategemInput
-          inputs={activeStrategems[0]?.sequence}
-          removeStrategem={removeStrategem}
-        />
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      width="100%"
+      maxWidth="800px"
+    >
+      <Box
+        display="flex"
+        width="100%"
+        justifyContent="space-between"
+        marginBottom={2}
+      >
+        <InfoLabel label="Round">{round}</InfoLabel>
+        <InfoLabel label="Score">{score}</InfoLabel>
       </Box>
-      <Text>Score: {score}</Text>
+      <StrategemList strategems={activeStrategems.slice(1)} />
+      <StrategemImage strategem={currentStrategem} withBorder />
+      <Heading
+        as="h2"
+        size="2xl"
+        backgroundColor="hdYellow.400"
+        color="black"
+        width="100%"
+        p={2}
+        textAlign="center"
+        textTransform="uppercase"
+        boxShadow="0 0 6px var(--chakra-colors-hdYellow-400), 0 0 6px var(--chakra-colors-hdYellow-400)"
+        marginBottom={6}
+      >
+        {currentStrategem?.name}
+      </Heading>
+      <StrategemInput
+        inputs={currentStrategem?.sequence}
+        removeStrategem={removeStrategem}
+      />
     </Box>
   );
 };

@@ -25,11 +25,21 @@ const theme = extendTheme({
       700: '#404040',
       800: '#262626',
       900: '#120b0d'
+    },
+    strategemType: {
+      offensive: '#de7b6c',
+      offensiveAlpha: '#de7b6c44',
+      defensive: '#679552',
+      defensiveAlpha: '#67955244',
+      weapon: '#49adc9',
+      weaponAlpha: '#49adc944',
+      utilty: '#c9b269',
+      utilityAlpha: '#c9b26944'
     }
   },
   fonts: {
-    heading: 'Roboto sans-serif',
-    body: 'Roboto sans-serif'
+    heading: `"Kode Mono", monospace, Roboto, sans-serif`,
+    body: `"Kode Mono", monospace, Roboto, sans-serif`,
   },
   styles: {
     global: {

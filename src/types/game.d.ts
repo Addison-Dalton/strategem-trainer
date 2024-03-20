@@ -16,9 +16,11 @@ type StrategemCategory =
   | 'Engineering Bay'
   | 'Robotics Workshop';
 
+type StrategemType = 'offensive' | 'defensive' | 'weapon' | 'utility';
+
 type Strategem = {
   name: string;
-  imgPath: string;
   category: StrategemCategory;
+  type: StrategemType;
   sequence: Input[];
 };
