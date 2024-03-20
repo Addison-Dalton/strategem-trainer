@@ -25,6 +25,7 @@ const Game = () => {
       alignItems="center"
       width="100%"
       maxWidth="800px"
+      paddingX={4}
     >
       <Box
         display="flex"
@@ -33,7 +34,9 @@ const Game = () => {
         marginBottom={2}
       >
         <InfoLabel label="Round">{round}</InfoLabel>
-        <InfoLabel label="Score">{score}</InfoLabel>
+        <InfoLabel label="Score" infoTextProps={{ textAlign: 'end' }}>
+          {score}
+        </InfoLabel>
       </Box>
       <StrategemList strategems={activeStrategems.slice(1)} />
       <StrategemImage strategem={currentStrategem} withBorder />
