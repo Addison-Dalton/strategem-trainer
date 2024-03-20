@@ -5,5 +5,6 @@ import svgr from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), tsconfigPaths(), svgr({ include: '**/*.svg' })]
+  plugins: [react(), tsconfigPaths(), svgr({ include: '**/*.svg' })],
+  base: '/strategem-trainer'
 });
