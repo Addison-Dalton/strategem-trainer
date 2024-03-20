@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Box } from '@chakra-ui/react';
 import { Icon } from '@chakra-ui/icons';
 import {
@@ -24,11 +23,7 @@ const inputIcons = {
   [Input.Right]: ImArrowRight
 };
 
-const StrategemInput = ({
-  inputs,
-  removeStrategem,
-  showHint = true
-}: Props) => {
+const StrategemInput = ({ inputs, removeStrategem }: Props) => {
   const { correctInputCount } = useInput(inputs, removeStrategem);
   if (!inputs || inputs.length === 0) return null;
 

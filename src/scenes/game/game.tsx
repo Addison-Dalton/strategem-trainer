@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Box, Text, Heading } from '@chakra-ui/react';
+import { Box, Heading } from '@chakra-ui/react';
 import { StrategemInput, StrategemList } from 'scenes/strategem';
 import StrategemImage from 'components/strategem-img';
 import InfoLabel from 'components/info-label';
