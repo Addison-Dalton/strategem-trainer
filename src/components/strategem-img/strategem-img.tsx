@@ -26,7 +26,7 @@ const StrategemImage = ({
       }
     >
       <Image
-        src={`/strategems/${strategem.category}/${strategem.name}.svg`}
+        src={`/strategem-trainer/strategems/${strategem.category}/${strategem.name}.svg`}
         alt={strategem.name}
         boxSize={boxSize}
       />

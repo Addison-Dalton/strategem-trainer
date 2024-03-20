@@ -28,7 +28,6 @@
       "types/*": ["src/types/*"],
       "services/*": ["src/services/*"],
       "data/*": ["src/data/*"],
-      "assets/*": ["src/assets/*"],
     }
   },
   "include": ["src"],
