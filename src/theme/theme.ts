@@ -39,12 +39,25 @@ const theme = extendTheme({
   },
   fonts: {
     heading: `"Kode Mono", monospace, Roboto, sans-serif`,
-    body: `"Kode Mono", monospace, Roboto, sans-serif`,
+    body: `"Kode Mono", monospace, Roboto, sans-serif`
   },
   styles: {
     global: {
       body: {
-        background: 'hdGray.800'
+        background: 'hdGray.800',
+        position: 'relative',
+        '&::before': {
+          position: 'absolute',
+          content: 'url(/strategem-trainer/icons/super-earth-logo.svg)',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)', // Corrected line
+          width: '50vw',
+          maxWidth: '600px',
+          opacity: 0.04,
+          zIndex: -1,
+          userSelect: 'none'
+        }
       }
     }
   }
