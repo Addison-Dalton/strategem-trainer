@@ -28,13 +28,13 @@ const theme = extendTheme({
     },
     strategemType: {
       offensive: '#de7b6c',
-      offensiveAlpha: '#de7b6c44',
+      offensiveAlpha: '#de7b6c66',
       defensive: '#679552',
-      defensiveAlpha: '#67955244',
+      defensiveAlpha: '#67955266',
       weapon: '#49adc9',
-      weaponAlpha: '#49adc944',
+      weaponAlpha: '#49adc966',
       utilty: '#c9b269',
-      utilityAlpha: '#c9b26944'
+      utilityAlpha: '#c9b26966'
     }
   },
   fonts: {
