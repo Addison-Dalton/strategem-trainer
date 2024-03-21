@@ -21,6 +21,11 @@ export const useGame = () => {
   const score = useSelector(selectScore);
   const activeStrategems = useSelector(selectActiveStrategems);
 
+  if (activeStrategems.length === 0) {
+    dispatch(setRound(round + 1));
+    dispatch(setActiveStrategems(getStrategemsForRound()));
+  }
+
   const resetGame = () => {
     dispatch(setGameState('playing'));
     dispatch(setRound(1));
