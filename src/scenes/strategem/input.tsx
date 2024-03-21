@@ -41,7 +41,7 @@ const StyledIconBox = styled(Box)`
   transition: all ${TIMER_DURATION}ms ease-in;
 
   &.incorrect-input {
-    color: red;
+    color: var(--chakra-colors-strategemType-offensive); // red-like color
     animation: ${shake} ${TIMER_DURATION}ms ease-in-out;
   }
 

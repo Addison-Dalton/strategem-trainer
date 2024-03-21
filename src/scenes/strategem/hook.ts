@@ -6,13 +6,22 @@ export const TIMER_DURATION = 200;
 export const useInput = (inputs: Input[], removeStrategem: () => void) => {
   const [correctInputCount, setCorrectInputCount] = useState(0);
   const [incorrectInput, setIncorrectInput] = useState(false);
+  const [disableInput, setDisableInput] = useState(false);
 
   const handleCorrectInput = () => {
     setCorrectInputCount((prev) => prev + 1);
     if (correctInputCount + 1 === inputs.length) {
+      completeStrategem();
+    }
+  };
+
+  const completeStrategem = () => {
+    setDisableInput(true);
+    setTimeout(() => {
       removeStrategem();
       resetInputCount();
-    }
+      setDisableInput(false);
+    }, TIMER_DURATION);
   };
 
   const resetInputCount = () => {
@@ -28,7 +37,7 @@ export const useInput = (inputs: Input[], removeStrategem: () => void) => {
   const handleKeyDown = (e: KeyboardEvent) => {
     const key = e.key;
     // only listen for arrow keys
-    if (!key.includes('Arrow')) return;
+    if (!key.includes('Arrow') || disableInput) return;
     if (e.key === 'ArrowUp' && inputs[correctInputCount] === Input.Up) {
       handleCorrectInput();
     } else if (
