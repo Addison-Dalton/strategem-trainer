@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Input } from 'types/enums';
 
+import { getInputFromKey, acceptedKeys } from 'services/strategems/utils';
+
 export const TIMER_DURATION = 200;
 
 export const useInput = (inputs: Input[], removeStrategem: () => void) => {
@@ -37,23 +39,8 @@ export const useInput = (inputs: Input[], removeStrategem: () => void) => {
   const handleKeyDown = (e: KeyboardEvent) => {
     const key = e.key;
     // only listen for arrow keys
-    if (!key.includes('Arrow') || disableInput) return;
-    if (e.key === 'ArrowUp' && inputs[correctInputCount] === Input.Up) {
-      handleCorrectInput();
-    } else if (
-      e.key === 'ArrowDown' &&
-      inputs[correctInputCount] === Input.Down
-    ) {
-      handleCorrectInput();
-    } else if (
-      e.key === 'ArrowLeft' &&
-      inputs[correctInputCount] === Input.Left
-    ) {
-      handleCorrectInput();
-    } else if (
-      e.key === 'ArrowRight' &&
-      inputs[correctInputCount] === Input.Right
-    ) {
+    if (!acceptedKeys.includes(key) || disableInput) return;
+    if (getInputFromKey(key) === inputs[correctInputCount]) {
       handleCorrectInput();
     } else {
       handleIncorrectInput();

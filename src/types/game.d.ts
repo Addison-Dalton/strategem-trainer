@@ -24,3 +24,8 @@ type Strategem = {
   type: StrategemType;
   sequence: Input[];
 };
+
+type KeyMap = {
+  input: Input;
+  keys: string[];
+};
